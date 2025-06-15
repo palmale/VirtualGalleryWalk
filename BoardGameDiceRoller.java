@@ -10,15 +10,15 @@ public class BoardGameDiceRoller {
 
         System.out.print("Enter number of players: ");
         int numPlayers = sc.nextInt();
-        sc.nextLine(); // consume newline
+        sc.nextLine(); 
 
-        System.out.print("Enter number of sides on the dice ");
+        System.out.print("Enter number of sides on the dice: ");
         int sides = sc.nextInt();
-        sc.nextLine(); // consume newline
+        sc.nextLine(); 
 
         System.out.print("Enter how many dice to roll per turn: ");
         int numDice = sc.nextInt();
-        sc.nextLine(); // consume newline
+        sc.nextLine(); 
 
         int currentPlayer = 1;
 
@@ -39,13 +39,9 @@ public class BoardGameDiceRoller {
             }
             System.out.println("\nTotal: " + sum);
 
-            if (numDice == 2 && diceRolls[0] == diceRolls[1]) {
-                System.out.println("Doubles! You get an extra turn.");
-            } else {
-                currentPlayer++;
-                if (currentPlayer > numPlayers) {
-                    currentPlayer = 1;
-                }
+            currentPlayer++;
+            if (currentPlayer > numPlayers) {
+                currentPlayer = 1;
             }
 
             System.out.print("Roll again? (yes/no): ");
